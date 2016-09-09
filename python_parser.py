@@ -8,7 +8,8 @@ class PythonParser:
     file = open(OUTPUT_FILE, 'w')
     word_count = {}
     for line in fileinput.input():
-      for word in line:
+      line_list = line.split()
+      for word in line_list:
         if word in word_count:
           word_count[word] += 1
         else:
@@ -27,5 +28,4 @@ class PythonParser:
     """Takes keyboard input and writes response as std out."""
     contents = input('Type text here: ')
     sys.stdout.write(contents)
-
   main()
